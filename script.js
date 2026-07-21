@@ -1,33 +1,63 @@
-const languageToggle = document.querySelector("#language-toggle");
 const menuButton = document.querySelector(".menu-button");
-const navigation = document.querySelector(".main-nav");
-
-let arabicMode = false;
-
-languageToggle.addEventListener("click", () => {
-  arabicMode = !arabicMode;
-
-  document.documentElement.lang = arabicMode ? "ar" : "fr";
-  document.body.dir = arabicMode ? "rtl" : "ltr";
-
-  languageToggle.textContent = arabicMode ? "Français" : "العربية";
-
-  if (arabicMode) {
-    document.querySelector(".eyebrow").textContent = "مخبزة وحلويات عائلية";
-    document.querySelector("h1").textContent =
-      "حلويات تحضر يومياً بكل حب وعناية";
-    document.querySelector(".hero-text").textContent =
-      "حلويات تقليدية وعصرية نحضرها بكميات صغيرة للحفاظ على الط freshness والجودة والمذاق المنزلي.";
-  } else {
-    document.querySelector(".eyebrow").textContent =
-      "BOULANGERIE-PÂTISSERIE FAMILIALE";
-    document.querySelector("h1").textContent =
-      "Des douceurs préparées chaque jour avec soin";
-    document.querySelector(".hero-text").textContent =
-      "Des pâtisseries traditionnelles et modernes, préparées en petites quantités pour préserver la fraîcheur, la qualité et le goût fait maison.";
-  }
-});
+const mainNav = document.querySelector(".main-nav");
+const languageButton = document.querySelector("#language-toggle");
+const heroSection = document.querySelector(".hero-section");
+const heroImage = document.querySelector(".hero-background");
 
 menuButton.addEventListener("click", () => {
-  navigation.classList.toggle("mobile-visible");
+  const isOpen = mainNav.classList.toggle("is-open");
+
+  document.body.classList.toggle("menu-open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+});
+
+mainNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+let currentLanguage = "fr";
+
+languageButton.addEventListener("click", () => {
+  currentLanguage = currentLanguage === "fr" ? "ar" : "fr";
+
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir =
+    currentLanguage === "ar" ? "rtl" : "ltr";
+
+  languageButton.textContent =
+    currentLanguage === "fr" ? "العربية" : "Français";
+
+  document.querySelectorAll("[data-fr][data-ar]").forEach((element) => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+});
+
+const hideMissingHero = () => {
+  heroImage.hidden = true;
+  heroSection.classList.add("no-hero-image");
+};
+
+heroImage.addEventListener("error", hideMissingHero);
+
+if (heroImage.complete && heroImage.naturalWidth === 0) {
+  hideMissingHero();
+}
+
+document.querySelectorAll("[data-placeholder] img").forEach((image) => {
+  const container = image.closest("[data-placeholder]");
+
+  const showPlaceholder = () => {
+    image.hidden = true;
+    container.classList.add("image-missing");
+  };
+
+  image.addEventListener("error", showPlaceholder);
+
+  if (image.complete && image.naturalWidth === 0) {
+    showPlaceholder();
+  }
 });
