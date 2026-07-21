@@ -5,163 +5,289 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Al Majd Bakery | حلويات المجد</title>
-  <meta name="description" content="Al Majd Bakery, boulangerie-pâtisserie familiale à Sidi Bel Abbès.">
+  <meta name="description"
+        content="Al Majd Bakery, boulangerie-pâtisserie familiale à Sidi Bel Abbès.">
 
   <link rel="icon" href="assets/almajd_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
   <header class="site-header">
-    <a href="#accueil" class="logo-link">
-      <img src="assets/almajd_logo.png" alt="Al Majd Bakery - حلويات المجد" class="logo">
+    <a href="#accueil" class="logo-link" aria-label="Al Majd Bakery">
+      <img src="assets/almajd_logo.png"
+           alt="Al Majd Bakery - حلويات المجد"
+           class="logo">
     </a>
 
-    <nav class="main-nav">
-      <a href="#histoire">Notre histoire</a>
-      <a href="#creations">Nos créations</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#accueil" data-fr="Accueil" data-ar="الرئيسية">Accueil</a>
+      <a href="#histoire" data-fr="Notre histoire" data-ar="قصتنا">Notre histoire</a>
+      <a href="#creations" data-fr="Nos créations" data-ar="حلوياتنا">Nos créations</a>
+      <a href="#galerie" data-fr="Galerie" data-ar="الصور">Galerie</a>
+      <a href="#contact" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
     </nav>
 
     <div class="header-actions">
-      <button id="language-toggle" class="language-button">العربية</button>
-      <button class="menu-button" aria-label="Ouvrir le menu">☰</button>
+      <a class="header-phone" href="tel:+213658595763">
+        06 58 59 57 63
+      </a>
+
+      <button id="language-toggle" class="language-button" type="button">
+        العربية
+      </button>
+
+      <button class="menu-button"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-
     <section id="accueil" class="hero-section">
-      <div class="hero-content">
-        <p class="eyebrow">BOULANGERIE-PÂTISSERIE FAMILIALE</p>
+      <img src="assets/hero-pastries.jpg"
+           alt="Sélection de pâtisseries Al Majd"
+           class="hero-background">
 
-        <h1>
-          Des douceurs préparées chaque jour avec soin
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow"
+           data-fr="BOULANGERIE-PÂTISSERIE FAMILIALE"
+           data-ar="مخبزة وحلويات عائلية">
+          BOULANGERIE-PÂTISSERIE FAMILIALE
+        </p>
+
+        <h1 data-fr="Des douceurs préparées chaque jour, comme à la maison."
+            data-ar="حلويات محضّرة يومياً بحب، كما في البيت.">
+          Des douceurs préparées chaque jour, comme à la maison.
         </h1>
 
-        <p class="hero-text">
-          Des pâtisseries traditionnelles et modernes, préparées en petites quantités
-          pour préserver la fraîcheur, la qualité et le goût fait maison.
+        <p class="hero-text"
+           data-fr="Pâtisseries algériennes, viennoiseries et créations modernes préparées avec soin à Sidi Bel Abbès."
+           data-ar="حلويات جزائرية ومعجنات وإبداعات عصرية محضّرة بعناية في سيدي بلعباس.">
+          Pâtisseries algériennes, viennoiseries et créations modernes
+          préparées avec soin à Sidi Bel Abbès.
         </p>
 
         <div class="hero-buttons">
-          <a href="#creations" class="button button-primary">
+          <a href="#creations"
+             class="button button-primary"
+             data-fr="Découvrir nos créations"
+             data-ar="اكتشفوا حلوياتنا">
             Découvrir nos créations
           </a>
 
-          <a
-            href="https://wa.me/213658595763"
-            class="button button-secondary"
-            target="_blank"
-          >
+          <a href="https://wa.me/213658595763"
+             class="button button-light"
+             target="_blank"
+             rel="noopener"
+             data-fr="Commander sur WhatsApp"
+             data-ar="اطلب عبر واتساب">
             Commander sur WhatsApp
           </a>
         </div>
-      </div>
-
-      <div class="hero-image-wrapper">
-        <img
-          src="assets/hero-pastries.jpg"
-          alt="Sélection de pâtisseries Al Majd"
-          class="hero-image"
-        >
-      </div>
-    </section>
-
-    <section id="histoire" class="about-section section">
-      <div class="section-image">
-        <img src="assets/gallery/gallery-1.jpg" alt="Préparation de pâtisseries">
-      </div>
-
-      <div class="section-content">
-        <p class="eyebrow">NOTRE SAVOIR-FAIRE</p>
-
-        <h2>Le goût du fait maison</h2>
-
-        <p>
-          Al Majd Bakery est une boulangerie-pâtisserie familiale située à
-          Sidi Bel Abbès. Nos créations sont préparées chaque jour avec soin,
-          à partir d’ingrédients sélectionnés et de recettes inspirées de la
-          tradition algérienne.
-        </p>
-
-        <p>
-          Nous privilégions les petites quantités afin de préserver la fraîcheur,
-          la texture et la qualité de chaque produit.
-        </p>
-
-        <a href="#contact" class="text-link">Nous rendre visite →</a>
       </div>
     </section>
 
     <section id="creations" class="products-section section">
       <div class="section-heading">
-        <p class="eyebrow">NOS CRÉATIONS</p>
-        <h2>Préparées avec amour</h2>
-        <p>
-          Découvrez une sélection de nos pâtisseries traditionnelles et modernes.
+        <p class="eyebrow" data-fr="NOS CRÉATIONS" data-ar="حلوياتنا">
+          NOS CRÉATIONS
+        </p>
+        <h2 data-fr="Une douceur pour chaque envie"
+            data-ar="حلوى لكل رغبة">
+          Une douceur pour chaque envie
+        </h2>
+        <p data-fr="Découvrez une sélection de nos spécialités traditionnelles et modernes."
+           data-ar="اكتشفوا مجموعة من حلوياتنا التقليدية والعصرية.">
+          Découvrez une sélection de nos spécialités traditionnelles et modernes.
         </p>
       </div>
 
       <div class="product-grid">
-
         <article class="product-card">
-          <img src="assets/sablé.jpg" alt="Sablé prestige">
+          <div class="product-image" data-placeholder="Sablés Prestige">
+            <img src="assets/sable.jpg" alt="Sablés Prestige">
+          </div>
           <div class="product-card-content">
-            <h3>Sablé Prestige</h3>
-            <p>Des biscuits délicats, élégants et fondants.</p>
+            <h3 data-fr="Sablés Prestige" data-ar="صابلي بريستيج">
+              Sablés Prestige
+            </h3>
+            <p data-fr="Délicats, fondants et décorés avec soin."
+               data-ar="حلويات رقيقة وذائبة مزينة بعناية.">
+              Délicats, fondants et décorés avec soin.
+            </p>
           </div>
         </article>
 
         <article class="product-card">
-          <img src="assets/baklava.jpg" alt="Baklava">
+          <div class="product-image" data-placeholder="Pâtisseries traditionnelles">
+            <img src="assets/baklava.jpg" alt="Baklava et pâtisseries traditionnelles">
+          </div>
           <div class="product-card-content">
-            <h3>Baklava</h3>
-            <p>Une douceur traditionnelle riche en saveurs.</p>
+            <h3 data-fr="Pâtisseries traditionnelles"
+                data-ar="حلويات تقليدية">
+              Pâtisseries traditionnelles
+            </h3>
+            <p data-fr="Baklava, makrout et recettes familiales."
+               data-ar="بقلاوة، مقروط ووصفات عائلية أصيلة.">
+              Baklava, makrout et recettes familiales.
+            </p>
           </div>
         </article>
 
         <article class="product-card">
-          <img src="assets/croissants.jpg" alt="Croissants">
+          <div class="product-image" data-placeholder="Viennoiseries">
+            <img src="assets/croissants.jpg" alt="Croissants et viennoiseries">
+          </div>
           <div class="product-card-content">
-            <h3>Croissants & Viennoiseries</h3>
-            <p>Préparés avec soin pour accompagner vos moments.</p>
+            <h3 data-fr="Viennoiseries" data-ar="معجنات">
+              Viennoiseries
+            </h3>
+            <p data-fr="Croissants et douceurs préparés chaque jour."
+               data-ar="كرواسون ومعجنات طازجة محضّرة يومياً.">
+              Croissants et douceurs préparés chaque jour.
+            </p>
           </div>
         </article>
 
         <article class="product-card">
-          <img src="assets/cakes.jpg" alt="Gâteaux et cupcakes">
+          <div class="product-image" data-placeholder="Gâteaux">
+            <img src="assets/cakes.jpg" alt="Gâteaux et cupcakes">
+          </div>
           <div class="product-card-content">
-            <h3>Gâteaux & Cupcakes</h3>
-            <p>Des créations pour vos fêtes et vos occasions spéciales.</p>
+            <h3 data-fr="Gâteaux & Cupcakes" data-ar="كيك وكب كيك">
+              Gâteaux & Cupcakes
+            </h3>
+            <p data-fr="Des créations pour vos fêtes et occasions."
+               data-ar="إبداعات لمناسباتكم واحتفالاتكم.">
+              Des créations pour vos fêtes et occasions.
+            </p>
           </div>
         </article>
+      </div>
+    </section>
 
+    <section class="values-section">
+      <div class="value">
+        <strong data-fr="Ingrédients sélectionnés" data-ar="مكونات مختارة">
+          Ingrédients sélectionnés
+        </strong>
+        <span data-fr="Pour un goût authentique" data-ar="لطعم أصيل">
+          Pour un goût authentique
+        </span>
+      </div>
+
+      <div class="value">
+        <strong data-fr="Préparé chaque jour" data-ar="تحضير يومي">
+          Préparé chaque jour
+        </strong>
+        <span data-fr="En petites quantités" data-ar="بكميات صغيرة">
+          En petites quantités
+        </span>
+      </div>
+
+      <div class="value">
+        <strong data-fr="Recettes familiales" data-ar="وصفات عائلية">
+          Recettes familiales
+        </strong>
+        <span data-fr="Inspirées de notre tradition" data-ar="مستوحاة من تقاليدنا">
+          Inspirées de notre tradition
+        </span>
+      </div>
+
+      <div class="value">
+        <strong data-fr="À Sidi Bel Abbès" data-ar="في سيدي بلعباس">
+          À Sidi Bel Abbès
+        </strong>
+        <span data-fr="Venez nous rendre visite" data-ar="تفضلوا بزيارتنا">
+          Venez nous rendre visite
+        </span>
+      </div>
+    </section>
+
+    <section id="histoire" class="about-section section">
+      <div class="section-image" data-placeholder="Notre savoir-faire">
+        <img src="assets/gallery/gallery-1.jpg"
+             alt="Préparation artisanale de pâtisseries">
+      </div>
+
+      <div class="section-content">
+        <p class="eyebrow" data-fr="NOTRE SAVOIR-FAIRE" data-ar="خبرتنا">
+          NOTRE SAVOIR-FAIRE
+        </p>
+
+        <h2 data-fr="Le goût du fait maison"
+            data-ar="مذاق البيت الأصيل">
+          Le goût du fait maison
+        </h2>
+
+        <p data-fr="Al Majd Bakery est une boulangerie-pâtisserie familiale située à Sidi Bel Abbès. Nos créations associent recettes algériennes, savoir-faire artisanal et touches modernes."
+           data-ar="حلويات المجد مخبزة وحلويات عائلية في سيدي بلعباس، تجمع بين الوصفات الجزائرية والخبرة الحرفية واللمسات العصرية.">
+          Al Majd Bakery est une boulangerie-pâtisserie familiale située à
+          Sidi Bel Abbès. Nos créations associent recettes algériennes,
+          savoir-faire artisanal et touches modernes.
+        </p>
+
+        <p data-fr="Nous préparons nos produits en petites quantités pour préserver leur fraîcheur, leur texture et leur qualité."
+           data-ar="نحضّر منتجاتنا بكميات صغيرة للحفاظ على طزاجتها وقوامها وجودتها.">
+          Nous préparons nos produits en petites quantités pour préserver
+          leur fraîcheur, leur texture et leur qualité.
+        </p>
+
+        <a href="#contact"
+           class="text-link"
+           data-fr="Nous rendre visite"
+           data-ar="زورونا">
+          Nous rendre visite
+        </a>
       </div>
     </section>
 
     <section id="galerie" class="gallery-section section">
       <div class="section-heading">
-        <p class="eyebrow">GALERIE</p>
-        <h2>Un aperçu de nos créations</h2>
+        <p class="eyebrow" data-fr="GALERIE" data-ar="الصور">GALERIE</p>
+        <h2 data-fr="Un aperçu de nos créations"
+            data-ar="لمحة عن إبداعاتنا">
+          Un aperçu de nos créations
+        </h2>
       </div>
 
       <div class="gallery-grid">
-        <img src="assets/gallery/gallery-1.jpg" alt="Pâtisseries Al Majd">
-        <img src="assets/gallery/gallery-2.jpg" alt="Créations Al Majd">
-        <img src="assets/gallery/gallery-3.jpg" alt="Gâteaux Al Majd">
+        <div data-placeholder="Pâtisseries Al Majd">
+          <img src="assets/gallery/gallery-1.jpg" alt="Pâtisseries Al Majd">
+        </div>
+        <div data-placeholder="Créations Al Majd">
+          <img src="assets/gallery/gallery-2.jpg" alt="Créations Al Majd">
+        </div>
+        <div data-placeholder="Gâteaux Al Majd">
+          <img src="assets/gallery/gallery-3.jpg" alt="Gâteaux Al Majd">
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact-section section">
       <div class="contact-content">
-        <p class="eyebrow">VENEZ NOUS VOIR</p>
+        <p class="eyebrow" data-fr="VENEZ NOUS VOIR" data-ar="تفضلوا بزيارتنا">
+          VENEZ NOUS VOIR
+        </p>
 
-        <h2>Nous serons heureux de vous accueillir</h2>
+        <h2 data-fr="Nous serons heureux de vous accueillir"
+            data-ar="يسعدنا استقبالكم">
+          Nous serons heureux de vous accueillir
+        </h2>
 
-        <p>
+        <p data-fr="Cité 400 Logements, en face de la supérette Ecoprix, Sidi Bel Abbès, Algérie."
+           data-ar="حي 400 مسكن، مقابل متجر إيكوبري، سيدي بلعباس، الجزائر.">
           Cité 400 Logements, en face de la supérette Ecoprix,
           Sidi Bel Abbès, Algérie.
         </p>
@@ -172,29 +298,28 @@
         </div>
 
         <div class="contact-buttons">
-          <a
-            href="https://wa.me/213658595763"
-            class="button button-primary"
-            target="_blank"
-          >
-            WhatsApp
-          </a>
+          <a href="https://wa.me/213658595763"
+             class="button button-primary"
+             target="_blank"
+             rel="noopener">WhatsApp</a>
 
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Al+Majd+Bakery+Sidi+Bel+Abbes"
-            class="button button-secondary"
-            target="_blank"
-          >
+          <a href="https://www.google.com/maps/search/?api=1&query=Al+Majd+Bakery+Sidi+Bel+Abbes"
+             class="button button-outline"
+             target="_blank"
+             rel="noopener"
+             data-fr="Voir la localisation"
+             data-ar="عرض الموقع">
             Voir la localisation
           </a>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
-    <img src="assets/almajd_logo.png" alt="Al Majd Bakery logo" class="footer-logo">
+    <img src="assets/almajd_logo.png"
+         alt="Al Majd Bakery"
+         class="footer-logo">
 
     <p>© 2026 Al Majd Bakery — حلويات المجد</p>
 
